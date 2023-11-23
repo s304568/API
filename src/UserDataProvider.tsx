@@ -3,7 +3,7 @@ import { ReactNode, createContext, useState } from "react";
 interface UserDataType {
   name: string;
   age: number;
-  adress: string;
+  address: string;
 }
 interface UserDataContextType {
   userData: UserDataType;
@@ -12,7 +12,7 @@ interface UserDataContextType {
 export const UserDataContext = createContext<UserDataContextType | null>(null);
 
 function UserDataProvider({ children }: { children: ReactNode }) {
-  const [userData, setUserData] = useState({ name: "", age: 0, adress: "" });
+  const [userData, setUserData] = useState({ name: "", age: 0, address: "" });
 
   return (
     <UserDataContext.Provider value={{ userData, setUserData }}>
@@ -21,4 +21,4 @@ function UserDataProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export default UserDataContext;
+export default UserDataProvider;
